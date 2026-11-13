@@ -26,12 +26,12 @@ install-dev: venv ## Install optional development tools
 	$(PIP) install -r requirements-dev.txt
 
 dirs: ## Create data and results directories
-	$(PYTHON) -c "from pathlib import Path; [Path(p).mkdir(parents=True, exist_ok=True) for p in ['data/input_images', 'data/output_images', 'results/graphs', 'results/metrics', 'results/logs']]"
+	$(PYTHON) -c "from pathlib import Path; [Path(p).mkdir(parents=True, exist_ok=True) for p in ['data/input_images', 'results/figures', 'results/metrics']]"
 
 run: dirs ## Run the main project entry point
 	$(VENV_PYTHON) main.py
 
-test: ## Run tests (if a tests/ directory exists)
+test: ## Run the test suite
 	$(VENV_PYTHON) -m pytest -q
 
 lint: ## Check Python code with Ruff
@@ -45,4 +45,4 @@ check: lint test ## Run linting and tests
 clean: ## Remove generated outputs and Python cache files
 	rm -rf .pytest_cache .ruff_cache
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +
-	find results/graphs results/metrics results/logs -type f -delete 2>/dev/null || true
+	find results/figures results/metrics -type f -delete 2>/dev/null || true

@@ -1,0 +1,25 @@
+{
+  "lu": {
+    "lle": 1.4956,
+    "chaotic": true
+  },
+  "genesio_tesi": {
+    "lle": 0.1029,
+    "chaotic": true
+  },
+  "genesio_tesi_alt": {
+    "lle": 0.0006,
+    "chaotic": false
+  },
+  "chua_gamma_0.385": {
+    "lle": -0.001,
+    "chaotic": false
+  },
+  "chua_gamma_0.0385": {
+    "lle": 0.3902,
+    "chaotic": true
+  },
+  "response_eq40_u0": {
+    "norm_at_10s": 0.017604380545156326
+  }
+}
